@@ -23,6 +23,9 @@ RUN apt-get update && apt-get install -y \
     obfs4proxy \
     --no-install-recommends
 
+# Allow tor to bind to ports < 1024.
+RUN setcap cap_net_bind_service=+ep /usr/bin/tor
+
 # Allow obfs4proxy to bind to ports < 1024.
 RUN setcap cap_net_bind_service=+ep /usr/bin/obfs4proxy
 
