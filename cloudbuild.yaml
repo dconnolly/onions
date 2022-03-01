@@ -1,0 +1,19 @@
+steps:
+
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '--tag=gcr.io/$PROJECT_ID/github.com/dconnolly/onions/bridge:$COMMIT_SHA'
+  - '--file=docker/bridge/Dockerfile'
+  - '.'
+
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '--tag=gcr.io/$PROJECT_ID/github.com/dconnolly/onions/relay:$COMMIT_SHA'
+  - '--file=docker/relay/Dockerfile'
+  - '.'
+
+images:
+- 'gcr.io/$PROJECT_ID/github.com/dconnolly/onions/bridge:$COMMIT_SHA'
+- 'gcr.io/$PROJECT_ID/github.com/dconnolly/onions/relay:$COMMIT_SHA'
