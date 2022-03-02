@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-NICK=${NICKNAME:-RANDOM}
+NICK=${NICKNAME:-$RANDOM}
 
 echo "Using NICKNAME=${NICK}, OR_PORT=${OR_PORT}."
 
