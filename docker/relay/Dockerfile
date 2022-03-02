@@ -20,7 +20,6 @@ RUN printf "deb https://deb.torproject.org/torproject.org bullseye main\n" >> /e
 RUN apt-get update && apt-get install -y \
     tor \
     tor-geoipdb \
-    nyx \
     --no-install-recommends
 
 # Allow tor to bind to ports < 1024.

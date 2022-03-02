@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 NICK=${NICKNAME:-$RANDOM}
+PORT=${OR_PORT:-443}
 
-echo "Using NICKNAME=${NICK}, OR_PORT=${OR_PORT}."
+echo "Using NICKNAME=${NICK}, OR_PORT=${PORT}."
 
 cat > /etc/tor/torrc << EOF
 Nickname ${NICK}
-ORPort ${OR_PORT}
+ORPort ${PORT}
 ExitRelay 0
 SocksPort 0
 EOF
