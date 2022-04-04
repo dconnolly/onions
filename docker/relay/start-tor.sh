@@ -10,6 +10,8 @@ Nickname ${NICK}
 ORPort ${PORT}
 ExitRelay 0
 SocksPort 0
+RelayBandwidthRate 1 MB
+RelayBandwidthBurst 2 MB
 EOF
 
 echo "Starting tor."
